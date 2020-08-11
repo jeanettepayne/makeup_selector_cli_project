@@ -1,0 +1,7 @@
+speed_dial = ["Will", "Courtney", "Mom", "Damian"]
+
+speed_dial[3] = "Dad"
+
+puts speed_dial
+
+
