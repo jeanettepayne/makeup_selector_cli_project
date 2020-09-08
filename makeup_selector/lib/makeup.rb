@@ -1,6 +1,0 @@
-class Makeup
-  
-  
-  
-  
-end
