@@ -20,11 +20,24 @@ class Scraper
       puts product["rating"]
       puts product["description"]
     end
-  # puts response
-  # binding.pry
  end
+
+def bronzer
+  url = 'http://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer'
+  response = HTTParty.get(url)
+  # data = response.parsed_response
+    response.each do |product|
+      puts product["brand"]
+      puts product["name"]
+      puts product["price"]
+      puts product["rating"]
+      puts product["description"]
+    end
+ end
+
 
   
 end
 
-Scraper.new.blush
+
+Scraper.new.bronzer
