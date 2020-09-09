@@ -1,7 +1,8 @@
 class MakeupSelector::CLI 
   
 def initialize
-  puts "Welcome to the Makeup Selector App!"
+  puts "Welcome to the Makeup Selector App!
+  "
   self.product_list
 end
 
