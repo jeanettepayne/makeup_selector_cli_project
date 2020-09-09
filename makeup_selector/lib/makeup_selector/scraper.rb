@@ -11,10 +11,10 @@ response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 def blush
   url = 'http://makeup-api.herokuapp.com/api/v1/products.json?type=blush'
   response = HTTParty.get(url)
-  puts response.body
-  binding.pry
+  puts response
 end
 
   
 end
 
+Scraper.new.blush
