@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-require 'httparty'
+# require 'httparty'
 
 # Specify your gem's dependencies in makeup_selector.gemspec
 gemspec
