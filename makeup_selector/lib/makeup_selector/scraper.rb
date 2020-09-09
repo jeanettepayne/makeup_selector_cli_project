@@ -8,7 +8,13 @@ class Scraper
   
 response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 
-# puts response.body
+def blush
+  url = 'http://makeup-api.herokuapp.com/api/v1/products.json?type=blush'
+  response = HTTParty.get(url)
+  puts response.body
+  binding.pry
+end
 
   
 end
+
