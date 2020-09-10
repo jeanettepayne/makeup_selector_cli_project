@@ -1,4 +1,4 @@
-class MakeupSelector::Makeup
+class Makeup
   
   
   
