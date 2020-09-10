@@ -22,11 +22,11 @@ class Scraper
   response = HTTParty.get(url)
     response.collect do |product|
       {
-      product[:brand => "brand"],
-      product[:name => "name"],
-      product[:price => "price"],
-      product[:rating => "rating"],
-      product[:description => "description"],
+      :brand => product["brand"],
+      :name => product["name"],
+      :price => product["price"],
+      :rating => product["rating"],
+      :description => product["description"],
       }
     end
  end
