@@ -9,6 +9,14 @@ class Scraper
   
 # response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 
+# def products
+#   response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
+#   response.each do |product|
+#     product["product_type"]
+#   end
+#   binding.pry
+# end
+
  def blush
   url = 'http://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush'
   response = HTTParty.get(url)
@@ -122,4 +130,4 @@ def eyebrow
 end
 
 
-# Scraper.new.bronzer
+Scraper.new.products
