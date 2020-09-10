@@ -37,7 +37,7 @@ def self.search_choices
     
 end
 
-def get_user_search_choice
+def self.get_user_search_choice
   # search_options = ["Brand", "Price", "Rating"]
   # search_options.each.with_index(1) do |option, index|
   #   puts "#{index}. #{option}"
