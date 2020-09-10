@@ -12,26 +12,25 @@ class Scraper
  def blush
   url = 'http://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush'
   response = HTTParty.get(url)
-  # data = response.parsed_response
     response.each do |product|
-      puts product["brand"]
-      puts product["name"]
-      puts product["price"]
-      puts product["rating"]
-      puts product["description"]
+      product["brand"]
+      product["name"]
+      product["price"]
+      product["rating"]
+      product["description"]
     end
  end
 
 def bronzer
   url = 'http://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer'
   response = HTTParty.get(url)
-  # data = response.parsed_response
     response.each do |product|
-      puts product["brand"]
-      puts product["name"]
-      puts product["price"]
-      puts product["rating"]
-      puts product["description"]
+      product["brand"]
+      product["name"]
+      product["price"]
+      product["rating"]
+      product["description"]
+      # binding.pry
     end
  end
 
