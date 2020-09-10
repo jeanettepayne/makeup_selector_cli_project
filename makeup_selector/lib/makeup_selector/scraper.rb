@@ -130,4 +130,4 @@ def eyebrow
 end
 
 
-Scraper.new.products
+# Scraper.new.products
