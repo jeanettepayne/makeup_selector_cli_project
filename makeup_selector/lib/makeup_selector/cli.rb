@@ -1,4 +1,7 @@
+require_relative './scraper'
+
 class CLI 
+  
   
 def initialize
   puts "Welcome to the Makeup Selector App!
@@ -19,7 +22,7 @@ end
 def get_user_product
   chosen_product = gets.strip.to_i 
   if chosen_product == 1 
-    puts Scraper.blush 
+    Scraper.new.blush 
   end
 end
 
@@ -29,4 +32,4 @@ end
   
 end
 
-CLI.new
+
