@@ -2,4 +2,5 @@
 
 require_relative '../lib/selector_environment'
 
-MakeupSelector::CLI.new
+CLI.new.get_user_product
+
