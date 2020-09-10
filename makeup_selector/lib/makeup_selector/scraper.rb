@@ -20,12 +20,14 @@ class Scraper
  def blush
   url = 'http://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush'
   response = HTTParty.get(url)
-    response.each do |product|
-      product["brand"]
-      product["name"]
-      product["price"]
-      product["rating"]
-      product["description"]
+    response.collect do |product|
+      {
+      product[:brand => "brand"],
+      product[:name => "name"],
+      product[:price => "price"],
+      product[:rating => "rating"],
+      product[:description => "description"],
+      }
     end
  end
 
