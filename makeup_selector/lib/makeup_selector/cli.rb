@@ -12,6 +12,8 @@ def initialize
   "
   self.product_list
   self.get_user_product
+  self.search_choices
+  self.get_user_search_choice
 end
 
 def product_list
@@ -32,7 +34,7 @@ def get_user_product
   # end
 end
 
-def self.search_choices
+def search_choices
   search_options = ["Brand", "Price", "Rating"]
   puts "Enter a number to select your search parameters:"
    search_options.each.with_index(1) do |option, index|
@@ -41,19 +43,19 @@ def self.search_choices
     
 end
 
-def self.get_user_search_choice
+def get_user_search_choice
   # search_options = ["Brand", "Price", "Rating"]
   # search_options.each.with_index(1) do |option, index|
   #   puts "#{index}. #{option}"
   # end
   search_choice = gets.strip.to_i 
-  if search_choice == 1 
-    Brand.brand_search
-  elsif search_choice == 2 
-    Price.price_search
-  elsif search_choice == 3 
-    Rating.rating_search
-  end
+  # if search_choice == 1 
+  #   Brand.brand_search
+  # elsif search_choice == 2 
+  #   Price.price_search
+  # elsif search_choice == 3 
+  #   Rating.rating_search
+  # end
     
 end
 
