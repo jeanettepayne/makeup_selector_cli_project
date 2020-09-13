@@ -1,5 +1,8 @@
 require_relative './scraper'
 require_relative './makeup'
+require_relative './brand'
+require_relative './price'
+require_relative './rating'
 
 class CLI 
   
@@ -43,6 +46,14 @@ def self.get_user_search_choice
   #   puts "#{index}. #{option}"
   # end
   search_choice = gets.strip.to_i 
+  if search_choice == 1 
+    Brand.brand_search
+  elsif search_choice == 2 
+    Price.price_search
+  elsif search_choice == 3 
+    Rating.rating_search
+  end
+    
 end
 
 # def get_products
