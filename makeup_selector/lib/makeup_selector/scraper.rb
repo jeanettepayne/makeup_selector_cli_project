@@ -5,23 +5,27 @@ response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 
 
 class Scraper
-  attr_accessor :brand, :price, :name, :rating, :description, :product_category
-  # include HTTParty
   
-# response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
+  # attr_accessor :brand, :price, :name, :rating, :description, :product_category
+  
+  # include HTTParty
 
-def products
+def self.products
   response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
   response.collect do |product|
-    @product_category = product["product_type"]
-    @brand = product["brand"]
-    @name = product["name"]
-    @price = product["price"]
-    @rating = product["rating"]
-    @description = product["description"]
-    binding.pry
+    product_category = product["product_type"]
+    brand = product["brand"]
+    name = product["name"]
+    price = product["price"]
+    rating = product["rating"]
+    description = product["description"]
+    
+    Makeup.new(product_category, brand, name, price, rating, description)
+  # binding.pry
   end
 end
+
+
 
 # def blush
 #   url = 'http://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush'
@@ -138,5 +142,4 @@ end
   
 end
 
-
-Scraper.new.products
+Scraper.new
