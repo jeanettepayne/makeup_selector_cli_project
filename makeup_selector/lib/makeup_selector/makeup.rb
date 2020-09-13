@@ -1,6 +1,7 @@
 require_relative './cli'
 require_relative './scraper'
 require 'pry'
+require 'httparty'
 
 class Makeup
   attr_accessor :brand, :name, :price, :rating, :description, :product_category
@@ -14,15 +15,17 @@ class Makeup
     @price = price 
     @rating = rating 
     @description = description
+    # save
+  end
+  
+  def save 
     @@all << self
   end
   
-  def self.category_selector
-    # puts "Enter a number to select your search parameters:"
-    # CLI.search_choices
-    # CLI.get_user_search_choice
-   
-  end
+  # def self.category_selector
+  #   if chosen_category == 1 
+  
+  # end
   
  def self.all
    @@all
@@ -31,4 +34,4 @@ class Makeup
   
 end
 
-# Makeup.all
+# Makeup.new
