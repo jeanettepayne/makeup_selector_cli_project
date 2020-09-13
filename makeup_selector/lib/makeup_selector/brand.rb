@@ -1,12 +1,15 @@
+require 'pry'
+require 'httparty'
+
 class Brand
-  attr_accessor :brand, :name, :price, :rating, :description
+  attr_accessor :brand, :name, :price, :rating, :description, :namebrand
 
 def self.brand_search
   puts "Please type the name of the brand you'd like to search for (all lowercase letters):"
   brand_input = gets.strip
   url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=#{brand_input}"
   response = HTTParty.get(url)
-  response.collect do |product|
+   response.each do |product|
       {
       :brand => product["brand"],
       :name => product["name"],
@@ -14,14 +17,17 @@ def self.brand_search
       :rating => product["rating"],
       :description => product["description"],
       }
+      binding.pry
+      puts "#{@name}"
     end 
- puts "#{@name}"
 end
 
-# def product_info
+# def self.product_info
 #   puts "#{@name}
 #   #{@price}
 #   #{@rating}"
 # end
   
 end
+
+Brand.brand_search
