@@ -11,6 +11,7 @@ def initialize
   puts "Welcome to the Makeup Selector App!
   "
   self.product_list
+  self.get_user_product
 end
 
 def product_list
@@ -25,10 +26,10 @@ end
 
 def get_user_product
   chosen_product = gets.strip.to_i 
-  if chosen_product == 1 
-    Makeup.blush_category_info
+  # if chosen_product == 1 
+  #   Makeup.blush_category_info
     # ADD OTHER OPTIONS HERE
-  end
+  # end
 end
 
 def self.search_choices
