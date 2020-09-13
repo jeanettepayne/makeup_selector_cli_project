@@ -17,7 +17,7 @@ class Makeup
     @@all << self
   end
   
-  def self.blush_category_info
+  def self.category_selector
     # puts "Enter a number to select your search parameters:"
     # CLI.search_choices
     # CLI.get_user_search_choice
