@@ -2,5 +2,5 @@
 
 require_relative '../lib/selector_environment'
 
-CLI.new
+MakeupSelector::CLI.new.start
 
