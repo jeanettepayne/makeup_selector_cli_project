@@ -3,22 +3,19 @@
 # require 'pry'
 # require 'httparty'
 
-class Makeup
-  attr_accessor :brand, :name, :price, :rating, :description, :product_category
+Module MakeupSelector
+ class Makeup
+  attr_accessor :product_category, :brand, :name, :price, :rating, :description
   
   @@all = []
   
   def initialize(product_category, brand, name, price, rating, description)
+    @product_category = product_category
     @brand = brand
     @name = name
     @price = price 
     @rating = rating 
     @description = description
-    @product_category = product_category
-    # save
-  end
-  
-  def save 
     @@all << self
   end
   

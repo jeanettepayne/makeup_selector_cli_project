@@ -1,11 +1,11 @@
-require_relative 'makeup'
+require_relative './makeup.rb'
 require 'rubygems'
 require 'httparty'
 require 'pry'
 # response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 
-
-class API
+Module MakeupSelector
+ class API
 
 def self.product_scrape
   response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
@@ -16,9 +16,9 @@ def self.product_scrape
     price = product["price"]
     rating = product["rating"]
     description = product["description"]
-    # binding.pry
-    Makeup.new(product_category, brand, name, price, rating, description)
-  
+    
+    nm = Makeup.new(product_category, brand, name, price, rating, description)
+  # binding.pry
   end
 end
 
@@ -140,4 +140,4 @@ end
   
 end
 
-Scraper.product_scrape
+# API.product_scrape

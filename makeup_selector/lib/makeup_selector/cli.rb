@@ -1,8 +1,8 @@
 require_relative './api'
 require_relative './makeup'
 
-
-class CLI 
+Module MakeupSelector
+ class CLI 
   
   
 def initialize
