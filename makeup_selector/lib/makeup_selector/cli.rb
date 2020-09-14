@@ -1,8 +1,6 @@
 require_relative './scraper'
 require_relative './makeup'
-require_relative './brand'
-require_relative './price'
-require_relative './rating'
+
 
 class CLI 
   
