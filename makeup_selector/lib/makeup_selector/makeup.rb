@@ -29,6 +29,7 @@ module MakeupSelector
  end
   
   
+ end
 end
 
 # Makeup.new
