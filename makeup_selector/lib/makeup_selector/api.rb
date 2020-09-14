@@ -5,7 +5,7 @@ require 'pry'
 # response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 
 
-class Scraper
+class API
 
 def self.product_scrape
   response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')

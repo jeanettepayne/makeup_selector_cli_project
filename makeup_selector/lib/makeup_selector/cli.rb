@@ -1,4 +1,4 @@
-require_relative './scraper'
+require_relative './api'
 require_relative './makeup'
 
 
