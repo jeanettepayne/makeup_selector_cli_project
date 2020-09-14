@@ -1,7 +1,7 @@
-require_relative 'api'
-require_relative 'cli'
-require 'pry'
-require 'httparty'
+# require_relative 'api'
+# require_relative 'cli'
+# require 'pry'
+# require 'httparty'
 
 class Makeup
   attr_accessor :brand, :name, :price, :rating, :description, :product_category
