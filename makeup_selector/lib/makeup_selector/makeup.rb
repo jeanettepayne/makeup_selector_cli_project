@@ -1,5 +1,5 @@
-require_relative './cli'
-require_relative './scraper'
+require_relative 'cli'
+require_relative 'scraper'
 require 'pry'
 require 'httparty'
 
@@ -9,12 +9,12 @@ class Makeup
   @@all = []
   
   def initialize(product_category, brand, name, price, rating, description)
-    @product_category = product_category
     @brand = brand
     @name = name
     @price = price 
     @rating = rating 
     @description = description
+    @product_category = product_category
     # save
   end
   

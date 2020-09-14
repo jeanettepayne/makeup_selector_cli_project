@@ -1,4 +1,4 @@
-require_relative './makeup'
+require_relative 'makeup'
 require 'rubygems'
 require 'httparty'
 require 'pry'
@@ -16,8 +16,9 @@ def self.product_scrape
     price = product["price"]
     rating = product["rating"]
     description = product["description"]
+    # binding.pry
     Makeup.new(product_category, brand, name, price, rating, description)
-  # binding.pry
+  
   end
 end
 
