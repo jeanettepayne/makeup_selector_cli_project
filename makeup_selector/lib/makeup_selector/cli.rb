@@ -5,7 +5,7 @@ module MakeupSelector
  class CLI 
   
   
-  def initialize
+  def start
     puts "Welcome to the Makeup Selector App!
     "
     self.category_list
@@ -28,22 +28,18 @@ module MakeupSelector
     chosen_category = gets.strip.to_i 
   end
 
-  def search_choices
-    search_options = ["Brand", "Price", "Rating"]
-    puts "Enter a number to select your search parameters:"
-     search_options.each.with_index(1) do |option, index|
-      puts "#{index}. #{option}"
-    end
+  # def search_choices
+  #   search_options = ["Brand", "Price", "Rating"]
+  #   puts "Enter a number to select your search parameters:"
+  #   search_options.each.with_index(1) do |option, index|
+  #     puts "#{index}. #{option}"
+  #   end
     
-  end
+  # end
 
-  def get_user_search_choice
-    search_choice = gets.strip.to_i 
-  end
-
-# def get_products
-#   @products = MakeupSelector::Scraper.products
-# end
+  # def get_user_search_choice
+  #   search_choice = gets.strip.to_i 
+  # end
   
 end
 end
