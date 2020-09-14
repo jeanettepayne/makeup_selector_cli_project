@@ -4,7 +4,7 @@ require 'httparty'
 require 'pry'
 # response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 
-Module MakeupSelector
+module MakeupSelector
  class API
 
 def self.products
@@ -25,4 +25,4 @@ end
   
 end
 
-# API.product_scrape
+API.products

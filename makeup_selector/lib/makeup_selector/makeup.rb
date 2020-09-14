@@ -3,9 +3,9 @@
 # require 'pry'
 # require 'httparty'
 
-Module MakeupSelector
+module MakeupSelector
  class Makeup
-  attr_accessor :product_category, :brand, :name, :price, :rating, :description
+  attr_reader :product_category, :brand, :name, :price, :rating, :description
   
   @@all = []
   
