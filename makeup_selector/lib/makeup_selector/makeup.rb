@@ -5,7 +5,7 @@
 
 module MakeupSelector
  class Makeup
-  attr_reader :product_category, :brand, :name, :price, :rating, :description
+  attr_reader :product_category, :brand, :name, :price, :rating, :description, :chosen_category
   
   @@all = []
   
@@ -19,10 +19,9 @@ module MakeupSelector
     @@all << self
   end
   
-  # def self.category_selector
-  #   if chosen_category == 1 
-  
-  # end
+  def self.find_by_category(category)
+    self.all.find{|product| product.product_category == category}
+  end
   
  def self.all
    @@all
