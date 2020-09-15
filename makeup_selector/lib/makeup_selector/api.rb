@@ -2,7 +2,6 @@ require_relative './makeup.rb'
 require 'rubygems'
 require 'httparty'
 require 'pry'
-# response = HTTParty.get('http://makeup-api.herokuapp.com/api/v1/products.json')
 
 module MakeupSelector
  class API
@@ -18,14 +17,12 @@ module MakeupSelector
       description = product["description"]
     
       nm = MakeupSelector::Makeup.new(product_category, brand, name, price, rating, description)
-      # binding.pry
+      
     end
   end
   
   
-  
-end
+ end
 
 end
 
-# MakeupSelector::API.products

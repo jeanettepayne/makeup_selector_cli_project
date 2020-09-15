@@ -1,11 +1,8 @@
 require_relative './api'
-# require_relative 'cli'
-# require 'pry'
-# require 'httparty'
 
 module MakeupSelector
  class Makeup
-  attr_reader :product_category, :brand, :name, :price, :rating, :description, :chosen_category, :categories
+  attr_reader :product_category, :brand, :name, :price, :rating, :description
   
   @@all = []
   

@@ -62,7 +62,6 @@ module MakeupSelector
       input = gets.strip.to_i
       
       product = @product_list[input-1]
-      # binding.pry
         puts "
         #{product.description}"
     end
