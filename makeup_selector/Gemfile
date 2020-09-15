@@ -1,7 +1,7 @@
 source "https://rubygems.org"
-# require 'httparty'
-# require 'pry'
-# require 'colorize'
+gem 'httparty'
+gem 'pry'
+gem 'colorize'
 
 # Specify your gem's dependencies in makeup_selector.gemspec
 gemspec
