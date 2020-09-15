@@ -18,8 +18,12 @@ module MakeupSelector
       description = product["description"]
     
       nm = MakeupSelector::Makeup.new(product_category, brand, name, price, rating, description)
-      binding.pry
+      # binding.pry
     end
+  end
+  
+  def self.category_selector
+    
   end
   
   

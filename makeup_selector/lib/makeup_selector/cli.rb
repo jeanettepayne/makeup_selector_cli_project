@@ -1,25 +1,33 @@
 require_relative './api'
 require_relative './makeup'
+require 'pry'
 
 module MakeupSelector
  class CLI 
-  
+  attr_accessor :chosen_category
+  attr_reader :product_category, :categories
   
   def start
     puts "Welcome to the Makeup Selector App!
     "
+    MakeupSelector::API.products
+    self.get_categories
     self.category_list
     self.get_user_category
-    self.search_choices
-    self.get_user_search_choice
+    self.product_list
+  end
+  
+   def get_categories
+    @categories = []
+    MakeupSelector::Makeup.all.each do |product|
+      @categories << product.product_category
+   end
   end
 
   def category_list
-    category_array = ["Blush", "Bronzer", "Eyebrow", "Eyeliner", "Eyeshadow", "Foundation", "Lip Liner", "Lipstick", "Mascara"]
-  
     puts "Please enter a number to select a product type:"
   
-    category_array.each.with_index(1) do |category, index|
+    @categories.uniq!.each.with_index(1) do |category, index|
       puts "#{index}. #{category}"
     end
   end
@@ -28,20 +36,11 @@ module MakeupSelector
     chosen_category = gets.strip.to_i 
   end
 
-  # def search_choices
-  #   search_options = ["Brand", "Price", "Rating"]
-  #   puts "Enter a number to select your search parameters:"
-  #   search_options.each.with_index(1) do |option, index|
-  #     puts "#{index}. #{option}"
-  #   end
-    
-  # end
+  def product_list
+  end
 
-  # def get_user_search_choice
-  #   search_choice = gets.strip.to_i 
-  # end
   
 end
 end
 
-
+# MakeupSelector::CLI.new.get_categories
