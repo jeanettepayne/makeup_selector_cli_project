@@ -18,9 +18,6 @@ Or install it yourself as:
 
     $ gem install makeup_selector
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
