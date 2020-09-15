@@ -1,6 +1,7 @@
 require_relative './api'
 require_relative './makeup'
 require 'pry'
+require 'colorize'
 
 module MakeupSelector
  class CLI 
@@ -9,7 +10,7 @@ module MakeupSelector
   
   def start
     puts "Welcome to the Makeup Selector App!
-    "
+    ".magenta
     MakeupSelector::API.products
     self.get_categories
     self.category_list
@@ -25,7 +26,7 @@ module MakeupSelector
   end
 
   def category_list
-    puts "Please enter a number to select a product type:"
+    puts "Please enter a number to select a product type:".magenta
   
     @category_list = @categories.uniq!.each.with_index(1) do |category, index|
       puts "#{index}. #{category}"
@@ -36,7 +37,7 @@ module MakeupSelector
     input = gets.strip.to_i 
   
     product_type = @category_list[input-1]
-    puts "Here is a list of #{product_type} products:"
+    puts "Here is a list of #{product_type} products:".magenta
     
     @product_list = []
     counter = 1
@@ -53,12 +54,13 @@ module MakeupSelector
     end
     
     def get_description
-      puts "To get the description for any product above, please enter its list number:"
+      puts "To get the description for any product above, please enter its list number:".magenta
       input = gets.strip.to_i
       
       product = @product_list[input-1]
       # binding.pry
-        puts "#{product.description}"
+        puts "
+        #{product.description}"
     end
 
   
