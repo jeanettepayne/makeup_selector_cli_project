@@ -1,4 +1,4 @@
-# require_relative 'api'
+require_relative './api'
 # require_relative 'cli'
 # require 'pry'
 # require 'httparty'
@@ -18,10 +18,7 @@ module MakeupSelector
     @description = description
     @@all << self
   end
-  
-  def self.find_by_category(chosen_category)
-    self.all.find{|product| product.product_category == chosen_category}
-  end
+
   
  def self.all
    @@all

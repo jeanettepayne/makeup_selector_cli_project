@@ -6,17 +6,21 @@ require 'colorize'
 module MakeupSelector
  class CLI 
   attr_accessor :chosen_category
-  attr_reader :categories, :product_category, :brand, :name, :price, :rating, :description, :category_list, :product_list
+  attr_reader :categories, :product_category, :brand, :name, :price, :rating, :description, :category_list, :product_list, :input
   
   def start
     puts "Welcome to the Makeup Selector App!
     ".magenta
     MakeupSelector::API.products
-    self.get_categories
-    self.category_list
-    self.get_user_category
-    self.get_description
-    self.restart_or_exit
+    @input = ""
+    until @input == "exit"
+      self.get_categories
+      self.category_list
+      self.get_user_category
+      self.get_description
+      self.restart_or_exit
+    end 
+    self.goodbye
   end
   
    def get_categories
@@ -64,22 +68,12 @@ module MakeupSelector
     end
     
     def restart_or_exit
-      puts "Would you like to search for another product? (y/n):".magenta
-      input = gets.strip
-      
-      if input == "y" || "yes" || "Y" || "Yes"
-        self.get_categories
-        self.category_list
-        self.get_user_category
-        self.get_description
-        self.restart_or_exit
-      elsif input != "y" || "yes" || "Y" || "Yes" 
-        self.goodbye
-      end
+      puts "Would you like to search for another product? Enter 'exit' to leave program, or hit any key to search again".magenta
+      @input = gets.strip
     end
    
    def goodbye
-     puts "Thank you for using the Makeup Selector app! Goodbye!"
+     puts "Thank you for using the Makeup Selector app! Goodbye!".magenta
    end
   
  end
