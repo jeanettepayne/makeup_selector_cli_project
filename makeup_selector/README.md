@@ -1,6 +1,6 @@
 # MakeupSelector
 
-The Makeup Selector CLI app is designed to provide easy access to a wide array of cosmetics to allow you to find new products to try. First, you can select a makeup category (blush, eyeshadow, etc.), then you can filter that item by entering a brand, selecting top rated products, or choosing a price range category. You can then see that specific product's description.
+The Makeup Selector CLI app is designed to provide easy access to a wide array of cosmetics to allow you to find new products to try. First, you can select a makeup category (blush, eyeshadow, etc.), which will return a list of that category's products, with product name, brand, and price. From that list you can select a product for which you'd like a full description. Exit if you're satisfied, or go back through to find another product!
 
 ## Installation
 
