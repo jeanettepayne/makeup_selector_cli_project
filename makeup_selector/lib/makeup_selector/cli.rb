@@ -14,7 +14,7 @@ module MakeupSelector
     self.get_categories
     self.category_list
     self.get_user_category
-    # self.product_list
+    #self.get_user_description
   end
   
    def get_categories
@@ -36,13 +36,22 @@ module MakeupSelector
     input = gets.strip.to_i 
   
     product_type = @category_list[input-1]
-    puts "Here is a list of products:"
+    puts "Here is a list of #{product_type} products:"
     
-    MakeupSelector::Makeup.all.each do |product|
+    counter = 1
+    MakeupSelector::Makeup.all.each do |product, index|
       if product_type == product.product_category
-        puts "#{product.name}"
+        puts "#{counter}.    Name: #{product.name}, 
+        Brand: #{product.brand}, 
+        Price: $#{product.price}"
+        counter += 1
       end
      end
+    end
+    
+    def get_user_description
+      puts "To get the description for any product above, please enter its list number:"
+      input = gets.strip.to_i
     end
 
   
