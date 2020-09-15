@@ -40,13 +40,14 @@ module MakeupSelector
     
     @product_list = []
     counter = 1
-    MakeupSelector::Makeup.all.each do |product, index|
+    MakeupSelector::Makeup.all.each do |product|
       if product_type == product.product_category
+        @product_list << product
         puts "#{counter}.    Name: #{product.name}, 
         Brand: #{product.brand}, 
         Price: $#{product.price}"
         counter += 1
-        @product_list.push
+        # binding.pry
       end
      end
     end
@@ -55,8 +56,8 @@ module MakeupSelector
       puts "To get the description for any product above, please enter its list number:"
       input = gets.strip.to_i
       
-      product_chosen = @product_list[input-1]
-      binding.pry
+      product = @product_list[input-1]
+      # binding.pry
         puts "#{product.description}"
     end
 

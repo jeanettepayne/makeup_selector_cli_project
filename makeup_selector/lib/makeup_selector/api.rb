@@ -22,10 +22,6 @@ module MakeupSelector
     end
   end
   
-  def self.category_selector
-    
-  end
-  
   
   
 end
