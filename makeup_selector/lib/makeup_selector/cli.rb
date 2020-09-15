@@ -42,10 +42,8 @@ module MakeupSelector
       if product_type == product.product_category
         puts "#{product.name}"
       end
+     end
     end
-    # binding.pry
-    
-  end
 
   
 end
