@@ -5,7 +5,7 @@ require 'pry'
 module MakeupSelector
  class CLI 
   attr_accessor :chosen_category
-  attr_reader :product_category, :categories
+  attr_reader :categories, :product_category, :brand, :name, :price, :rating, :description, :category_list
   
   def start
     puts "Welcome to the Makeup Selector App!
@@ -14,7 +14,7 @@ module MakeupSelector
     self.get_categories
     self.category_list
     self.get_user_category
-    self.product_list
+    # self.product_list
   end
   
    def get_categories
@@ -27,16 +27,24 @@ module MakeupSelector
   def category_list
     puts "Please enter a number to select a product type:"
   
-    @categories.uniq!.each.with_index(1) do |category, index|
+    @category_list = @categories.uniq!.each.with_index(1) do |category, index|
       puts "#{index}. #{category}"
     end
   end
 
   def get_user_category
-    chosen_category = gets.strip.to_i 
-  end
-
-  def product_list
+    input = gets.strip.to_i 
+  
+    product_type = @category_list[input-1]
+    puts "Here is a list of products:"
+    
+    MakeupSelector::Makeup.all.each do |product|
+      if product_type == product.product_category
+        puts "#{product.name}"
+      end
+    end
+    # binding.pry
+    
   end
 
   
