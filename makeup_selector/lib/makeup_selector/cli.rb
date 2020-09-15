@@ -16,6 +16,7 @@ module MakeupSelector
     self.category_list
     self.get_user_category
     self.get_description
+    self.restart_or_exit
   end
   
    def get_categories
@@ -48,7 +49,6 @@ module MakeupSelector
         Brand: #{product.brand}, 
         Price: $#{product.price}"
         counter += 1
-        # binding.pry
       end
      end
     end
@@ -62,9 +62,25 @@ module MakeupSelector
         puts "
         #{product.description}"
     end
-
+    
+    def restart_or_exit
+      puts "Would you like to search for another product? (y/n):".magenta
+      input = gets.strip
+      
+      if input == "y" || "yes" || "Y" || "Yes"
+        self.get_categories
+        self.category_list
+        self.get_user_category
+        self.get_description
+        self.restart_or_exit
+      elsif input != "y" || "yes" || "Y" || "Yes" 
+        self.goodbye
+      end
+    end
+   
+   def goodbye
+     puts "Thank you for using the Makeup Selector app! Goodbye!"
+   end
   
+ end
 end
-end
-
-# MakeupSelector::CLI.new.get_categories
