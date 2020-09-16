@@ -14,13 +14,13 @@ module MakeupSelector
     MakeupSelector::API.products
     @input = ""
     until @input == "exit"
-      self.get_categories
-      self.category_list
-      self.get_user_category
-      self.get_description
-      self.restart_or_exit
+      get_categories
+      category_list
+      get_user_category
+      get_description
+      restart_or_exit
     end 
-    self.goodbye
+    goodbye
   end
   
    def get_categories
