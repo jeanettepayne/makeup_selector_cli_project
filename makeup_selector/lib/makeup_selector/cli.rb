@@ -1,5 +1,3 @@
-require_relative './api'
-require_relative './makeup'
 require 'pry'
 require 'colorize'
 

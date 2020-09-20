@@ -1,4 +1,3 @@
-require_relative './makeup.rb'
 require 'rubygems'
 require 'httparty'
 require 'pry'
@@ -16,7 +15,7 @@ module MakeupSelector
       rating = product["rating"]
       description = product["description"]
     
-      nm = MakeupSelector::Makeup.new(product_category, brand, name, price, rating, description)
+      new_makeup = MakeupSelector::Makeup.new(product_category, brand, name, price, rating, description)
       
     end
   end

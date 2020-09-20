@@ -1,5 +1,3 @@
-require_relative './api'
-
 module MakeupSelector
  class Makeup
   attr_reader :product_category, :brand, :name, :price, :rating, :description
