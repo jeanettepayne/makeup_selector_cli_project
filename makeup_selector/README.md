@@ -17,6 +17,10 @@ And then execute:
 Or install it yourself as:
 
     $ gem install makeup_selector
+    
+Then execute 
+
+    $ bundle install 
 
 
 ## Development
