@@ -90,12 +90,13 @@ module MakeupSelector
    end
 
   class MakeupError < StandardError
-    def description_message
-      puts "Oops! I don't recognize that entry. Please try again.".magenta
-    end
 
     def category_message
       puts "Please enter a number between 1 and 10:".magenta
+    end
+
+    def description_message
+      puts "Oops! I don't recognize that entry. Please try again.".magenta
     end
 
    end
