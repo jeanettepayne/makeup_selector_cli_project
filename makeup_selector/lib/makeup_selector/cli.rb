@@ -38,19 +38,27 @@ module MakeupSelector
 
   def get_user_category
     input = gets.strip.to_i 
-  
-    product_type = @category_list[input-1]
-    puts "Here is a list of #{product_type} products:".magenta
+    if input > 10
+      begin
+        raise MakeupError
+      rescue MakeupError => error
+        puts error.category_message
+      end
+      get_user_category
+    else
+      product_type = @category_list[input-1]
+      puts "Here is a list of #{product_type} products:".magenta
     
-    @product_list = []
-    counter = 1
-    MakeupSelector::Makeup.all.each do |product|
-      if product_type == product.product_category
-        @product_list << product
-        puts "#{counter}.    Name: #{product.name}, 
-        Brand: #{product.brand}, 
-        Price: $#{product.price}"
-        counter += 1
+      @product_list = []
+      counter = 1
+      MakeupSelector::Makeup.all.each do |product|
+        if product_type == product.product_category
+          @product_list << product
+          puts "#{counter}.    Name: #{product.name}, 
+          Brand: #{product.brand}, 
+          Price: $#{product.price}"
+          counter += 1
+        end
       end
      end
     end
@@ -62,7 +70,7 @@ module MakeupSelector
         begin
           raise MakeupError
         rescue MakeupError => error
-          puts error.message
+          puts error.description_message
         end
         get_description
       else
@@ -82,9 +90,14 @@ module MakeupSelector
    end
 
   class MakeupError < StandardError
-    def message
+    def description_message
       puts "Oops! I don't recognize that entry. Please try again.".magenta
     end
+
+    def category_message
+      puts "Please enter a number between 1 and 10:".magenta
+    end
+
    end
 
   
