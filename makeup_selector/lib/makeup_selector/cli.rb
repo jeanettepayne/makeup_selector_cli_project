@@ -47,7 +47,7 @@ module MakeupSelector
       get_user_category
     else
       product_type = @category_list[input-1]
-      puts "Here is a list of #{product_type} products:".magenta
+      puts "Here is a list of #{product_type.split("_").join(" ")} products:".magenta
     
       @product_list = []
       counter = 1
