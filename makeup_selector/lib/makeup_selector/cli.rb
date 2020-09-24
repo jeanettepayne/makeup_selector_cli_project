@@ -3,7 +3,6 @@ require 'colorize'
 
 module MakeupSelector
  class CLI 
-  attr_accessor :chosen_category
   attr_reader :categories, :product_category, :brand, :name, :price, :rating, :description, :category_list, :product_list, :input
   
   def start
@@ -17,6 +16,7 @@ module MakeupSelector
       get_user_category
       get_description
       restart_or_exit
+
     end 
     goodbye
   end
@@ -58,10 +58,18 @@ module MakeupSelector
     def get_description
       puts "To get the description for any product above, please enter its list number:".magenta
       input = gets.strip.to_i
-      
+      if input > @product_list.length
+        begin
+          raise MakeupError
+        rescue MakeupError => error
+          puts error.message
+        end
+        get_description
+      else
       product = @product_list[input-1]
         puts "
         #{product.description}"
+      end
     end
     
     def restart_or_exit
@@ -72,6 +80,13 @@ module MakeupSelector
    def goodbye
      puts "Thank you for using the Makeup Selector app! Goodbye!".magenta
    end
+
+  class MakeupError < StandardError
+    def message
+      puts "Oops! I don't recognize that entry. Please try again.".magenta
+    end
+   end
+
   
- end
+   end
 end

@@ -11,3 +11,6 @@ API
 
 Makeup 
 -Stores information about each makeup product
+
+
+if else for errors for input
