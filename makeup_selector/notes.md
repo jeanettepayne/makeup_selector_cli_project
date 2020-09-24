@@ -12,4 +12,6 @@ API
 Makeup 
 -Stores information about each makeup product
 
-
+CLI
+-interacts with the user
+-main functionality and flow lives here
