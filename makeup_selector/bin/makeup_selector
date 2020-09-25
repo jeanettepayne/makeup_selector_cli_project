@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+# Tells the program which language we're using - interpreter
 
 require_relative '../lib/selector_environment'
 

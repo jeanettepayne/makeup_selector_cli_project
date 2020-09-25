@@ -3,6 +3,10 @@ require 'colorize'
 
 module MakeupSelector
  class CLI 
+<<<<<<< HEAD
+=======
+  # attr_accessor :chosen_category
+>>>>>>> 673663912eba199639fc39cd001158a5f4617b79
   attr_reader :categories, :product_category, :brand, :name, :price, :rating, :description, :category_list, :product_list, :input
   
   def start

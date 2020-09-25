@@ -2,6 +2,9 @@ require 'rubygems'
 require 'httparty'
 require 'pry'
 
+#add these to environment file 
+#between pipes = placeholder
+
 module MakeupSelector
  class API
 
